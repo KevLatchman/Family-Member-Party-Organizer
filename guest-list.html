@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FF6347; /* Tomato */
+            color: #FFFFFF; /* White text for better visibility on the background */
+        }
+
+        header {
+            background-color: #FFD700; /* Light Gold */
+            padding: 10px;
+            text-align: center;
+            color: #FF6347; /* Tomato */
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+            font-weight: bold;
+            font-size: 1.2em; /* Adjust the font size */
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        .guest-list {
+            background-color: #FFD700; /* Light Gold */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .description {
+            margin-top: 20px;
+            color: #000000; /* Black */
+        }
+
+        .signin-message {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .action-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .action-buttons a {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Guest List</h1>
+    </header>
+
+    <nav>
+        <a href="guest-registration.html">Guest Registration</a> |
+        <a href="guest-list.html">Guest List</a> | 
+        <a href="contact.html">Contact</a> |
+        <a href="hw.html">Home</a> |
+        <a href="themes.html">Themes</a> |
+        <a href="venues.html">Venues</a> |
+        <a href="catering.html">Catering</a> |
+	<a href="celebration.html">Celebration</a> |
+    </nav>
+
+    <section>
+        <div class="guest-list">
+            <!-- Removed the extra "Guest List" title -->
+
+            <div class="description">
+                <p>The Guest List page allows you to manage the list of guests attending your event. Create, update, and track your guest list to ensure a smooth and organized gathering.</p>
+            </div>
+
+            <!-- Check if the user is signed in -->
+            <div id="guest-list-content">
+                <p>Your guest list content goes here.</p>
+            </div>
+
+            <div id="signin-message" class="signin-message">
+                <p>Please sign in to create your guest list.</p>
+            </div>
+
+            <!-- Action buttons for sign in and sign up -->
+            <div class="action-buttons">
+                <a href="guest-registration.html">Sign Up</a>
+                <a href="guest-registration.html">Sign In</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simulate user authentication
+        var isUserSignedIn = false;
+
+        // Check if the user is signed in and display/hide content accordingly
+        if (isUserSignedIn) {
+            document.getElementById('guest-list-content').style.display = 'block';
+            document.getElementById('signin-message').style.display = 'none';
+        } else {
+            document.getElementById('guest-list-content').style.display = 'none';
+            document.getElementById('signin-message').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
+

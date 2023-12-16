@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FFD700; /* Light Gold */
+            color: #000000; /* Black text for better visibility on the background */
+        }
+
+        header {
+            background-color: #FF6347; /* Tomato */
+            padding: 10px;
+            text-align: center;
+            color: #FFFFFF; /* White */
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50; /* Green */
+            font-weight: bold;
+            font-size: 1.5em; /* Increase the font size for a more vibrant look */
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #87CEEB; /* Sky Blue */
+            border-radius: 10px;
+            margin-bottom: 20px; /* Added margin between sections */
+        }
+
+        h2, h3 {
+            color: #FF6347; /* Tomato */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0; /* Remove default padding for the list */
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: #FFF8DC; /* Cornsilk */
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-image {
+            width: 300px; /* Set a specific width for uniformity */
+            border-radius: 5px;
+            display: none; /* Hide images by default */
+            margin-left: 10px; /* Add spacing between text and image */
+        }
+
+        .holiday-themes {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="color: #FFFFFF;">Themes</h1>
+    </header>
+
+    <nav>
+        <a href="guest-registration.html">Guest Registration</a> |
+        <a href="guest-list.html">Guest List</a> | <!-- Added Guest List menu item -->
+        <a href="contact.html">Contact</a> |
+        <a href="hw.html">Home</a> |
+        <a href="themes.html">Themes</a> |
+        <a href="venues.html">Venues</a> |
+        <a href="catering.html">Catering</a> |
+	<a href="celebration.html">Celebration</a> |
+        <!-- Add similar links for other sections -->
+    </nav>
+
+    <section>
+        <h2>Popular Themes</h2>
+        <ul>
+            <li onclick="toggleImage('superhero')">Superhero</li>
+            <img class="theme-image" id="superhero" src="images/superhero.jpg" alt="Superhero Theme Image">
+
+            <li onclick="toggleImage('princess')">Princess</li>
+            <img class="theme-image" id="princess" src="images/princess.jpg" alt="Princess Theme Image">
+
+            <li onclick="toggleImage('under-sea')">Under the Sea</li>
+            <img class="theme-image" id="under-sea" src="images/under-sea.jpg" alt="Under the Sea Theme Image">
+
+            <li onclick="toggleImage('space-adventure')">Space Adventure</li>
+            <img class="theme-image" id="space-adventure" src="images/space-adventure.jpg" alt="Space Adventure Theme Image">
+
+            <!-- Add more themes and corresponding images as needed -->
+        </ul>
+    </section>
+
+    <section class="holiday-themes">
+        <h3>Seasonal/Holiday Themes</h3>
+        <ul>
+            <li onclick="toggleImage('winter-wonderland')">Winter Wonderland</li>
+            <img class="theme-image" id="winter-wonderland" src="images/winter-wonderland.jpg" alt="Winter Wonderland Theme Image">
+
+            <li onclick="toggleImage('summer-beach')">Summer Beach Party</li>
+            <img class="theme-image" id="summer-beach" src="images/summer-beach.jpg" alt="Summer Beach Party Theme Image">
+
+            <li onclick="toggleImage('spooky-halloween')">Spooky Halloween</li>
+            <img class="theme-image" id="spooky-halloween" src="images/spooky-halloween.jpg" alt="Spooky Halloween Theme Image">
+
+            <li onclick="toggleImage('fall-harvest')">Fall Harvest Festival</li>
+            <img class="theme-image" id="fall-harvest" src="images/fall-harvest.jpg" alt="Fall Harvest Festival Theme Image">
+
+            <li onclick="toggleImage('spring-garden')">Spring Garden Party</li>
+            <img class="theme-image" id="spring-garden" src="images/spring-garden.jpg" alt="Spring Garden Party Theme Image">
+
+            <!-- Add more holiday themes and corresponding images as needed -->
+        </ul>
+    </section>
+
+    <script>
+        function toggleImage(imageId) {
+            var image = document.getElementById(imageId);
+            if (image.style.display === 'none') {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

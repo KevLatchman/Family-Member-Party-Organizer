@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FF7E5F; /* Melon */
+            color: #333333; /* Dark Gray text for better visibility on the background */
+        }
+
+        header {
+            background-color: #FFD700; /* Light Gold */
+            padding: 10px;
+            text-align: center;
+            color: #333333; /* Dark Gray */
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50; /* Green */
+            font-weight: bold;
+            font-size: 1.5em; /* Increase the font size for a more vibrant look */
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #FFB6C1; /* Light Pink */
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #FF6347; /* Tomato */
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+        }
+
+        .catering-options {
+            margin-top: 20px;
+        }
+
+        .catering-options h3 {
+            color: #4CAF50; /* Green */
+        }
+
+        .catering-description {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="color: #333333;">Catering</h1>
+    </header>
+
+    <nav>
+        <a href="guest-registration.html">Guest Registration</a> |
+        <a href="guest-list.html">Guest List</a> | <!-- Added Guest List menu item -->
+        <a href="contact.html">Contact</a> |
+        <a href="hw.html">Home</a> |
+        <a href="themes.html">Themes</a> |
+        <a href="venues.html">Venues</a> |
+        <a href="catering.html">Catering</a> |
+	<a href="celebration.html">Celebration</a> |
+        <!-- Add similar links for other sections -->
+    </nav>
+
+    <section>
+        <h2>Popular Catering Options</h2>
+        <ul>
+            <li onclick="toggleDetails('gourmet-delights', 'Gourmet Delights', 'Exquisite gourmet dishes served with a touch of elegance.', 'Cuisine: International', 'Price: $$$')"><h3>Gourmet Delights</h3></li>
+            <div class="catering-description" id="gourmet-delights-description"></div>
+
+            <li onclick="toggleDetails('fusion-feast', 'Fusion Feast', 'Unique fusion cuisine combining flavors from around the world.', 'Cuisine: Fusion', 'Price: $$')"><h3>Fusion Feast</h3></li>
+            <div class="catering-description" id="fusion-feast-description"></div>
+            <!-- Add more catering options with details as needed -->
+        </ul>
+    </section>
+
+    <section class="catering-options">
+        <h3>Additional Catering Choices</h3>
+        <ul>
+            <li onclick="toggleDetails('vegetarian-delight', 'Vegetarian Delight', 'Delicious and creative vegetarian options for a healthy celebration.', 'Cuisine: Vegetarian', 'Price: $$')"><h4>Vegetarian Delight</h4></li>
+            <div class="catering-description" id="vegetarian-delight-description"></div>
+
+            <li onclick="toggleDetails('decadent-desserts', 'Decadent Desserts', 'Indulge in a selection of decadent desserts and sweet treats.', 'Cuisine: Desserts', 'Price: $')"><h4>Decadent Desserts</h4></li>
+            <div class="catering-description" id="decadent-desserts-description"></div>
+            <!-- Add more catering options with details as needed -->
+        </ul>
+    </section>
+
+    <script>
+        function toggleDetails(cateringId, name, description, cuisine, price) {
+            var descriptionDiv = document.getElementById(cateringId + '-description');
+
+            if (descriptionDiv.style.display === 'none') {
+                descriptionDiv.innerHTML = '<p>' + description + '</p><p>' + cuisine + '</p><p>' + price + '</p>';
+                descriptionDiv.style.display = 'block';
+            } else {
+                descriptionDiv.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #FF6347; /* Tomato */
+            color: #FFFFFF; /* White text for better visibility on the background */
+        }
+
+        header {
+            background-color: #FFD700; /* Light Gold */
+            padding: 10px;
+            text-align: center;
+            color: #FF6347; /* Tomato */
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #FFFFFF; /* White */
+            font-weight: bold;
+            font-size: 1.2em; /* Adjust the font size */
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        .signup, .signin, .guest-list {
+            background-color: #FFD700; /* Light Gold */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            color: #000000; /* Black text */
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guest Registration</h1>
+    </header>
+
+    <nav>
+        <a href="guest-registration.html">Guest Registration</a> |
+        <a href="guest-list.html">Guest List</a> | <!-- Added Guest List menu item -->
+        <a href="contact.html">Contact</a> |
+        <a href="hw.html">Home</a> | <!-- Change the href to point to "hw.html" -->
+        <a href="themes.html">Themes</a> |
+        <a href="venues.html">Venues</a> |
+        <a href="catering.html">Catering</a> |
+	<a href="celebration.html">Celebration</a> |
+    </nav>
+
+    <section>
+        <div class="signup">
+            <h2>Sign Up</h2>
+            <form>
+                <!-- Your sign-up form elements go here -->
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+
+        <div class="signin">
+            <h2>Sign In</h2>
+            <form>
+                <!-- Your sign-in form elements go here -->
+                <label for="usernameSignIn">Username:</label>
+                <input type="text" id="usernameSignIn" name="usernameSignIn" required>
+                
+                <label for="passwordSignIn">Password:</label>
+                <input type="password" id="passwordSignIn" name="passwordSignIn" required>
+
+                <input type="submit" value="Sign In">
+            </form>
+
+            <div class="forgot-password">
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

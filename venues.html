@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venues</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #F8D800; /* Lemon */
+            color: #333333; /* Dark Gray text for better visibility on the background */
+        }
+
+        header {
+            background-color: #FF5500; /* International Orange */
+            padding: 10px;
+            text-align: center;
+            color: #FFFFFF; /* White */
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: left;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50; /* Green */
+            font-weight: bold;
+            font-size: 1.5em; /* Increase the font size for a more vibrant look */
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #00AEEF; /* Dodger Blue */
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #FF5500; /* International Orange */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+            display: flex;
+            align-items: center;
+        }
+
+        .venue-details {
+            margin-top: 20px;
+        }
+
+        .venue-details h3 {
+            color: #FF0000; /* Bright Red */
+        }
+
+        .venue-image {
+            max-width: 100%; /* Ensure images fit within the container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px;
+            display: none; /* Hide images by default */
+            margin-top: 10px; /* Add margin for spacing */
+        }
+
+        .venue-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .venue-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333333; /* Dark Gray text */
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 style="color: #FFFFFF;">Venues</h1>
+    </header>
+
+    <nav>
+        <a href="guest-registration.html">Guest Registration</a> |
+        <a href="guest-list.html">Guest List</a> | <!-- Added Guest List menu item -->
+        <a href="contact.html">Contact</a> |
+        <a href="hw.html">Home</a> |
+        <a href="themes.html">Themes</a> |
+        <a href="venues.html">Venues</a> |
+        <a href="catering.html">Catering</a> |
+	<a href="celebration.html">Celebration</a> |
+        <!-- Add similar links for other sections -->
+    </nav>
+
+    <section>
+        <h2>Popular Venues We Offer in New York</h2>
+        <ul>
+            <li onclick="toggleDetails('metropolitan-ballroom')"> <span class="venue-name">Metropolitan Ballroom</span></li>
+            <img class="venue-image" id="metropolitan-ballroom-image" src="" alt="Metropolitan Ballroom Image">
+            <div class="venue-description" id="metropolitan-ballroom-description"></div>
+
+            <li onclick="toggleDetails('central-park-pavilion')"> <span class="venue-name">Central Park Pavilion</span></li>
+            <img class="venue-image" id="central-park-pavilion-image" src="" alt="Central Park Pavilion Image">
+            <div class="venue-description" id="central-park-pavilion-description"></div>
+
+            <li onclick="toggleDetails('skyline-rooftop-lounge')"> <span class="venue-name">Skyline Rooftop Lounge</span></li>
+            <img class="venue-image" id="skyline-rooftop-lounge-image" src="" alt="Skyline Rooftop Lounge Image">
+            <div class="venue-description" id="skyline-rooftop-lounge-description"></div>
+
+            <li onclick="toggleDetails('brooklyn-loft-space')"> <span class="venue-name">Brooklyn Loft Space</span></li>
+            <img class="venue-image" id="brooklyn-loft-space-image" src="" alt="Brooklyn Loft Space Image">
+            <div class="venue-description" id="brooklyn-loft-space-description"></div>
+            <!-- Add more venues with details as needed -->
+        </ul>
+    </section>
+
+    <script>
+        function toggleDetails(venueId) {
+            var descriptionDiv = document.getElementById(venueId + '-description');
+            var image = document.getElementById(venueId + '-image');
+
+            if (descriptionDiv.style.display === 'none') {
+                // Reset all descriptions and hide all images
+                hideAllDetails();
+
+                // Set the specific venue description
+                descriptionDiv.innerHTML = getVenueDescription(venueId);
+                descriptionDiv.style.display = 'block';
+
+                // Set the specific venue image
+                image.src = getVenueImage(venueId);
+                image.style.display = 'block';
+            } else {
+                hideAllDetails();
+            }
+        }
+
+        function hideAllDetails() {
+            var descriptions = document.querySelectorAll('.venue-description');
+            var images = document.querySelectorAll('.venue-image');
+
+            descriptions.forEach(function (description) {
+                description.style.display = 'none';
+            });
+
+            images.forEach(function (image) {
+                image.style.display = 'none';
+            });
+        }
+
+        function getVenueDescription(venueId) {
+            switch (venueId) {
+                case 'metropolitan-ballroom':
+                    return '<h3>Metropolitan Ballroom</h3><p>Elegant ballroom in the heart of Manhattan, perfect for upscale celebrations.</p><p>Capacity: 300+</p><p>Location: 123 Broadway, New York</p>';
+                case 'central-park-pavilion':
+                    return '<h3>Central Park Pavilion</h3><p>Scenic pavilion overlooking Central Park, ideal for outdoor events.</p><p>Capacity: 50-100</p><p>Location: 456 Park Avenue, New York</p>';
+                case 'skyline-rooftop-lounge':
+                    return '<h3>Skyline Rooftop Lounge</h3><p>Stunning rooftop venue with panoramic views of the city skyline.</p><p>Capacity: 150+</p><p>Location: 789 High Street, New York</p>';
+                case 'brooklyn-loft-space':
+                    return '<h3>Brooklyn Loft Space</h3><p>Chic loft space in Brooklyn, perfect for modern and trendy celebrations.</p><p>Capacity: 80-120</p><p>Location: 101 Loft Avenue, Brooklyn</p>';
+                // Add more cases as needed
+                default:
+                    return '';
+            }
+        }
+
+        function getVenueImage(venueId) {
+            switch (venueId) {
+                case 'metropolitan-ballroom':
+                    return 'images/metropolitan_ballroom.jpg';
+                case 'central-park-pavilion':
+                    return 'images/central_park_pavilion.jpg';
+                case 'skyline-rooftop-lounge':
+                    return 'images/skyline_rooftop_lounge.jpg';
+                case 'brooklyn-loft-space':
+                    return 'images/brooklyn_loft_space.jpg';
+                // Add more cases as needed
+                default:
+                    return '';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
